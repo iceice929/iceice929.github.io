@@ -111,41 +111,11 @@
 <p>寻找一个合适自己的主题    <a target="_blank" rel="noopener" href="https://hexo.io/themes/">https://hexo.io/themes/</a> </p>
 <p>在hexo的配置文件设置使用该主题</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">hexo-theme-icalm</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="1-2配置hexo"><a href="#1-2配置hexo" class="headerlink" title="1.2配置hexo"></a>1.2配置hexo</h2><p>hexo初始化之后默认只有<code>home</code>和<code>archive</code>两个页面，在配置文件中添加自己的页面,hexo默认支持多语言想要改成中文可以在模板文件中修改。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">Home:</span> <span class="string">/</span></span><br><span class="line">  <span class="attr">Archive:</span> <span class="string">/archives/</span></span><br><span class="line">  <span class="attr">Tags:</span> <span class="string">/tags/</span></span><br><span class="line">  <span class="attr">Categories:</span> <span class="string">/categories/</span></span><br><span class="line">  <span class="attr">About:</span> <span class="string">/about/</span></span><br></pre></td></tr></table></figure>
-
-<p>使用hexo new page  <pageName> 命令添加自己自己的页面</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo new page tags</span></span><br></pre></td></tr></table></figure>
-
-<p>在source下目录下会自动生成&#x2F;source&#x2F;pageName&#x2F;index.md文件</p>
-<p>在index.md中输入</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2023-06-14 10:37:53</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">&quot;tags&quot;</span>	</span><br><span class="line"><span class="attr">comments:</span> <span class="literal">false</span>  </span><br></pre></td></tr></table></figure>
-
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">categories</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2023-06-14 10:43:07</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">&quot;categories&quot;</span></span><br><span class="line"><span class="attr">comments:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-<p>在_posts文件夹中找一个文章测试tags标签。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">hello</span> <span class="string">word</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2023-06-14 11:28:17</span></span><br><span class="line"><span class="attr">tags:</span> <span class="string">&quot;hexo-blog&quot;</span></span><br><span class="line"><span class="attr">categories:</span> <span class="string">&quot;瞎折腾&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>配置好上面的标签和页面之后就可以本地渲染看一下效果拉。</p>
-<h1 id="2-部署到githubPage"><a href="#2-部署到githubPage" class="headerlink" title="2.部署到githubPage"></a>2.部署到githubPage</h1><h2 id="2-1准备github仓库"><a href="#2-1准备github仓库" class="headerlink" title="2.1准备github仓库"></a>2.1准备github仓库</h2><p>官方文档：<a target="_blank" rel="noopener" href="https://docs.github.com/en/pages/quickstart">https://docs.github.com/en/pages/quickstart</a></p>
-<p>需要注意两个地方：</p>
-<ul>
-<li>github.io这个页面的二级域名只能是自己的github账号，完整就是githubUsername.github.io</li>
-<li>创建好仓库之后需要在仓库设置中，找到左侧的<code>Pages</code>-&gt;<code>Build and deployment</code>配置当前页面来源与哪个分支。</li>
-</ul>
-<h2 id="2-2使用hexo提供的一键部署"><a href="#2-2使用hexo提供的一键部署" class="headerlink" title="2.2使用hexo提供的一键部署"></a>2.2使用hexo提供的一键部署</h2><p>官方文档：<a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment">https://hexo.io/docs/one-command-deployment</a></p>
-<ul>
-<li><p>安装<code>hexo-deployer-git</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm install hexo-deployer-git --save</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>编辑<code>_config.yml</code></p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span> <span class="string">//</span> <span class="string">部署方式</span></span><br><span class="line">  <span class="attr">repo:</span> [<span class="string">打码</span>]	<span class="string">//</span> <span class="string">仓库地址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span> <span class="string">//</span> <span class="string">你的分支</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>生成站点文件并推送到远程仓库</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure></li>
-</ul>
-
+        
+          <div class="more-link">
+            <a href="/2023/06/14/hexo%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2/#more">Read On »</a>
+          </div>
+        
       
     </div>
 </article>
